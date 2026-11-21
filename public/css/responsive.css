@@ -1,0 +1,601 @@
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+.hero-art img,
+.gallery-card img,
+.books-spotlight-visual img,
+.quote-card-image,
+.blog-art img {
+  height: 100%;
+}
+
+/* Shared fluid containers */
+@media (max-width: 1100px) {
+  .header-inner,
+  .section-wrap,
+  .hero-inner,
+  .inner-hero-content,
+  .proof-strip,
+  .footer-inner {
+    width: min(100% - 40px, 1180px);
+  }
+
+  .brand-copy {
+    max-width: 220px;
+  }
+
+  .brand-copy strong {
+    white-space: normal;
+    font-size: 15px;
+  }
+
+  .brand-copy small {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .hero-inner {
+    grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+    grid-template-rows: auto auto;
+    align-items: start;
+    gap: 18px 22px;
+    min-height: 0;
+    padding: 28px 0 36px;
+  }
+
+  .hero-copy {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    padding: 18px 0 12px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(30px, 4.5vw, 42px);
+  }
+
+  .hero-intro {
+    max-width: 100%;
+  }
+
+  .hero-art,
+  .hero-art.hero-art {
+    grid-column: 2;
+    grid-row: 1;
+    width: 100%;
+    min-height: 220px;
+    height: 240px;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .hero-benefits {
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 14px 16px;
+    overflow: hidden;
+  }
+
+  .hero-benefits .benefit-row {
+    min-width: 0;
+    min-height: 0;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 11px 0;
+  }
+
+  .hero-benefits .benefit-row + .benefit-row {
+    border-top: 1px solid #f4edf5;
+    border-left: 0;
+    padding-left: 0;
+  }
+
+  .hero-benefits .benefit-row h2 {
+    font-size: 13px;
+  }
+
+  .hero-benefits .benefit-row p {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .proof-strip {
+    position: relative;
+    z-index: 2;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 18px;
+    margin-top: 22px;
+    padding: 20px 22px;
+  }
+
+  .proof-strip .proof-item {
+    min-width: 0;
+    align-items: flex-start;
+  }
+
+  .proof-strip .proof-item p {
+    max-width: none;
+  }
+
+  .book-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .value-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .blog-grid,
+  .gallery-grid,
+  .testimonial-grid,
+  .program-card-grid,
+  .training-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .info-content,
+  .home-about,
+  .contact-section,
+  .mission-vision-content,
+  .mission-vision-content--quote-left,
+  .book-order-section {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .page-cta,
+  .inspiration-band,
+  .books-recommend-banner,
+  .training-approach-banner {
+    flex-wrap: wrap;
+  }
+
+  .newsletter-form {
+    width: 100%;
+    max-width: 480px;
+  }
+
+  .training-areas-lead {
+    white-space: normal;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .books-spotlight-visual,
+  .books-spotlight-visual img {
+    min-height: 300px;
+    max-height: 380px;
+  }
+
+  .footer-inner {
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 22px 0;
+  }
+
+  .footer-inner > p {
+    max-width: 100%;
+  }
+}
+
+/* Tablet */
+@media (max-width: 850px) {
+  .site-header {
+    position: sticky;
+    top: 0;
+  }
+
+  .header-inner {
+    min-height: 64px;
+    gap: 12px;
+  }
+
+  .header-cta {
+    display: none !important;
+  }
+
+  .menu-toggle {
+    width: 42px;
+    height: 42px;
+    margin-left: auto;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid #eddef1;
+    border-radius: 12px;
+    background: #fff;
+    cursor: pointer;
+    flex: 0 0 auto;
+  }
+
+  .menu-toggle span {
+    width: 17px;
+    height: 2px;
+    border-radius: 2px;
+    background: #8b5bbb;
+  }
+
+  .primary-navigation {
+    position: absolute;
+    top: calc(100% - 1px);
+    right: 20px;
+    left: 20px;
+    height: auto !important;
+    max-height: min(70vh, 480px);
+    overflow: auto;
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    border: 1px solid #f0e4f1;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 18px 35px rgba(76, 42, 94, 0.13);
+    z-index: 30;
+  }
+
+  .primary-navigation.is-open {
+    display: flex !important;
+  }
+
+  .primary-navigation a {
+    min-height: 44px;
+    padding: 0 14px;
+    border-radius: 10px;
+    font-size: 14px;
+    white-space: normal;
+  }
+
+  .primary-navigation a.is-active {
+    background: #fff5fa;
+  }
+
+  .primary-navigation a.is-active:after {
+    display: none;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    padding-bottom: 28px;
+  }
+
+  .hero-copy,
+  .hero-art,
+  .hero-art.hero-art,
+  .hero-benefits {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .hero-art,
+  .hero-art.hero-art {
+    order: -1;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    max-height: 360px;
+    aspect-ratio: 16 / 10;
+    margin: 0;
+    border-radius: 18px;
+    overflow: hidden;
+  }
+
+  .hero-art img {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .hero-benefits {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+    margin-top: 4px;
+    padding: 12px 16px;
+  }
+
+  .hero-benefits .benefit-row {
+    padding: 12px 0;
+  }
+
+  .hero-benefits .benefit-row + .benefit-row {
+    border-left: 0;
+    border-top: 1px solid #f4edf5;
+    padding-left: 0;
+  }
+
+  .proof-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 18px;
+  }
+
+  .section-heading-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .book-grid-featured .book-card:nth-child(n + 4) {
+    display: none;
+  }
+
+  .inner-hero,
+  .inner-hero--compact {
+    min-height: 0;
+  }
+
+  .inner-hero-content {
+    padding: 42px 0 36px;
+  }
+
+  .inner-hero h1 {
+    font-size: clamp(28px, 6vw, 40px);
+  }
+
+  .inner-orbit {
+    opacity: 0.35;
+    right: -40px;
+    width: 150px;
+    height: 150px;
+  }
+
+  .page-cta {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .page-cta .button,
+  .books-recommend-banner .button {
+    width: 100%;
+  }
+
+  .inspiration-band {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .newsletter-form {
+    width: 100%;
+  }
+
+  .home-discover--wide .home-discover-inner--full,
+  .about-initiatives-card,
+  .books-feature-copy,
+  .books-spotlight-body {
+    padding: 28px 22px;
+  }
+
+  .training-approach-banner,
+  .books-recommend-banner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px 20px;
+  }
+
+  .footer-links {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 12px 16px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 620px) {
+  .header-inner,
+  .section-wrap,
+  .hero-inner,
+  .inner-hero-content,
+  .proof-strip,
+  .footer-inner {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .brand-copy {
+    max-width: min(170px, 52vw);
+  }
+
+  .brand-copy strong {
+    font-size: 14px;
+  }
+
+  .brand-copy small {
+    font-size: 8px;
+    -webkit-line-clamp: 1;
+  }
+
+  .primary-navigation {
+    right: 14px;
+    left: 14px;
+  }
+
+  .hero-copy {
+    padding: 18px 0 8px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(28px, 8.5vw, 36px);
+    line-height: 1.12;
+  }
+
+  .hero-intro {
+    font-size: 13px;
+  }
+
+  .hero-actions {
+    width: 100%;
+  }
+
+  .hero-actions .button {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+
+  .hero-art,
+  .hero-art.hero-art {
+    max-height: 260px;
+    aspect-ratio: 1.4;
+    border-radius: 14px;
+  }
+
+  .hero-benefits {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 6px;
+    padding: 12px 14px;
+  }
+
+  .hero-benefits .benefit-row + .benefit-row {
+    border-left: 0;
+    border-top: 1px solid #f4edf5;
+    padding-left: 0;
+  }
+
+  .proof-strip {
+    grid-template-columns: 1fr;
+    margin-top: 16px;
+    padding: 14px 16px;
+  }
+
+  .proof-item {
+    align-items: flex-start;
+  }
+
+  .book-grid,
+  .value-grid,
+  .blog-grid,
+  .gallery-grid,
+  .testimonial-grid,
+  .program-card-grid,
+  .training-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .book-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .book-grid-featured .book-card:nth-child(n + 3) {
+    display: none;
+  }
+
+  .home-about,
+  .info-content,
+  .contact-section {
+    padding-top: 36px;
+    padding-bottom: 42px;
+  }
+
+  .home-about-copy h2,
+  .contact-copy h2,
+  .page-cta h2 {
+    font-size: clamp(24px, 7vw, 30px);
+  }
+
+  .quote-card p,
+  .quote-card--with-image .quote-card-body p {
+    font-size: 18px;
+  }
+
+  .books-spotlight {
+    border-radius: 16px;
+  }
+
+  .books-spotlight-visual,
+  .books-spotlight-visual img {
+    min-height: 220px;
+    max-height: 260px;
+  }
+
+  .books-spotlight-badge {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+  }
+
+  .books-spotlight-badge h2 {
+    font-size: 22px;
+  }
+
+  .training-areas-intro h2,
+  .about-initiatives-card h2,
+  .home-discover-inner h2 {
+    font-size: clamp(24px, 7vw, 30px);
+  }
+
+  .training-approach-text,
+  .books-recommend-text {
+    font-size: 16px;
+  }
+
+  .mission-vision-section {
+    padding-top: 36px;
+    padding-bottom: 40px;
+  }
+
+  .mission-vision-jump {
+    width: 100%;
+  }
+
+  .mission-vision-jump a {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+  .contact-form,
+  .admin-form {
+    padding: 18px 14px;
+  }
+
+  .footer-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .copyright {
+    margin-left: 0;
+  }
+
+  .inner-orbit {
+    display: none;
+  }
+}
+
+/* Extra-small phones */
+@media (max-width: 380px) {
+  .book-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .brand-copy small {
+    display: none;
+  }
+
+  .hero-actions .button {
+    font-size: 11px;
+  }
+}

@@ -1,0 +1,146 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+    --font-serif: 'Cormorant Garamond', ui-serif, Georgia, serif;
+    --font-display: 'Cormorant Garamond', ui-serif, Georgia, serif;
+    --font-script: 'Great Vibes', cursive;
+
+    --color-cream: #fff9ee;
+    --color-cream-dark: #f5ebd8;
+    --color-cream-soft: #fbf6ec;
+    --color-gold: #c9a227;
+    --color-gold-light: #e0bc4a;
+    --color-gold-dark: #a8861a;
+    --color-brown: #3d2e1f;
+    --color-brown-soft: #5c4a38;
+    --color-muted: #7a6a58;
+    --color-card: #ffffff;
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply bg-cream text-brown antialiased;
+        background-image:
+            radial-gradient(ellipse 80% 50% at 10% 20%, rgb(232 188 74 / 0.18), transparent),
+            radial-gradient(ellipse 60% 40% at 90% 10%, rgb(201 162 39 / 0.12), transparent),
+            radial-gradient(ellipse 50% 30% at 70% 80%, rgb(245 235 216 / 0.8), transparent);
+        background-attachment: fixed;
+    }
+
+    ::selection {
+        @apply bg-gold/30 text-brown;
+    }
+}
+
+@layer components {
+    .container-site {
+        @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+    }
+
+    .btn-gold {
+        @apply inline-flex items-center justify-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_-10px_rgba(201,162,39,0.7)] transition duration-300 hover:-translate-y-0.5 hover:bg-gold-light;
+    }
+
+    .btn-outline {
+        @apply inline-flex items-center justify-center gap-2 rounded-full border border-gold/40 bg-white/50 px-6 py-3 text-sm font-semibold text-brown backdrop-blur-sm transition duration-300 hover:border-gold hover:bg-white;
+    }
+
+    .section-label {
+        @apply text-xs font-semibold tracking-[0.25em] text-gold uppercase;
+    }
+
+    .heading-display {
+        @apply font-display text-4xl leading-tight font-semibold text-brown sm:text-5xl;
+    }
+
+    .card-soft {
+        @apply rounded-3xl border border-white/80 bg-white/80 p-6 shadow-[0_20px_50px_-30px_rgba(61,46,31,0.35)] backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_25px_60px_-28px_rgba(201,162,39,0.45)];
+    }
+
+    .nav-link {
+        @apply text-sm font-medium text-brown-soft transition hover:text-gold;
+    }
+
+    .nav-link-active {
+        @apply text-gold;
+    }
+
+    .ribbon-glow {
+        background:
+            linear-gradient(115deg, transparent 0%, rgb(224 188 74 / 0.15) 35%, transparent 55%),
+            linear-gradient(250deg, transparent 20%, rgb(201 162 39 / 0.12) 50%, transparent 70%);
+    }
+
+    .frame-photo {
+        @apply overflow-hidden rounded-[2rem] border-4 border-white shadow-[0_25px_60px_-25px_rgba(61,46,31,0.4)];
+    }
+
+    .input-field {
+        @apply w-full rounded-2xl border border-cream-dark bg-cream-soft/80 px-4 py-3 text-brown outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/20;
+    }
+}
+
+@keyframes float-soft {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.animate-float {
+    animation: float-soft 5s ease-in-out infinite;
+}
+
+.animate-fade-up {
+    animation: fade-up 0.8s ease-out both;
+}
+
+.animate-fade-up-delay {
+    animation: fade-up 0.9s ease-out 0.15s both;
+}
+
+.animate-fade-up-delay-2 {
+    animation: fade-up 1s ease-out 0.3s both;
+}
+
+.gold-shimmer {
+    background: linear-gradient(90deg, #a8861a, #e0bc4a, #c9a227, #e0bc4a);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 4s linear infinite;
+}
