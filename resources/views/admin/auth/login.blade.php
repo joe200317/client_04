@@ -29,5 +29,6 @@
             <button class="btn btn-primary" type="submit" style="width: 100%;">Sign in</button>
         </form>
     </div>
+    <script src="{{ asset('js/admin-password-toggle.js') }}"></script>
 </body>
 </html>

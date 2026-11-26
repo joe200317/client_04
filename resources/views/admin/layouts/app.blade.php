@@ -63,5 +63,6 @@
             });
         })();
     </script>
+    <script src="{{ asset('js/admin-password-toggle.js') }}"></script>
 </body>
 </html>
